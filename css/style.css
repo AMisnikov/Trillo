@@ -101,7 +101,8 @@ body {
   z-index: 1000;
   list-style: none;
   width: 100%;
-  transition: all .2s; }
+  transition: all .2s;
+  box-shadow: var(--shadow-dark); }
   .suggestions__item {
     padding: 2rem;
     transition: all .2s; }
@@ -188,7 +189,13 @@ body {
     visibility: hidden;
     z-index: -1;
     transition: all .5s; }
+    @media only screen and (max-width: 40em) {
+      .messages__list {
+        width: 30rem;
+        right: -11rem; } }
   .messages__item {
+    position: relative;
+    z-index: inherit;
     display: flex;
     align-items: center;
     padding: 2rem; }
@@ -210,10 +217,11 @@ body {
   .messages__info {
     text-decoration: none;
     color: var(--color-primary-dark); }
+  .messages:hover {
+    z-index: 1000; }
   .messages:hover .messages__list {
     visibility: visible;
-    opacity: 1;
-    z-index: 1000; }
+    opacity: 1; }
 
 .user {
   position: relative; }

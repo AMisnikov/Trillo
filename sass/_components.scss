@@ -100,6 +100,7 @@
         list-style: none;
         width: 100%;
         transition: all .2s;
+        box-shadow: var(--shadow-dark);
 
         &__item {
             padding: 2rem;
@@ -246,11 +247,18 @@
         visibility: hidden;
         z-index: -1;
         transition: all .5s;
+
+        @include media(640) {
+            width: 30rem;
+            right: -11rem;
+        }
         
 
     }
 
     &__item {
+        position: relative;
+        z-index: inherit;
         display: flex;
         align-items: center;
         padding: 2rem;
@@ -291,11 +299,15 @@
         color: var(--color-primary-dark);
     }
 
+    &:hover {
+        z-index: 1000;
+    }
+
 
     &:hover &__list {
         visibility: visible;
         opacity: 1;
-        z-index: 1000;
+      
     }
 
     
